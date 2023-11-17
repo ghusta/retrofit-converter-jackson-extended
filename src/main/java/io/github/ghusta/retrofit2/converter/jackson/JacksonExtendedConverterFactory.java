@@ -47,6 +47,10 @@ public class JacksonExtendedConverterFactory extends Converter.Factory {
         this.mapper = mapper;
     }
 
+    /**
+     * The {@link JsonView} Jackson annotation is managed in responses.
+     * If present, the Jackson {@link ObjectReader} will be configured to use it during deserialization.
+     */
     @Override
     public Converter<ResponseBody, ?> responseBodyConverter(Type type, Annotation[] annotations, Retrofit retrofit) {
         JavaType javaType = mapper.getTypeFactory().constructType(type);

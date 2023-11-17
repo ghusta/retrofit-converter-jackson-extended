@@ -4,7 +4,7 @@
 
 == Overview
 
-This library adds support of Jackson's `@JsonView`, which is not available in the original https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson[_converter-jackson_] Retrofit 2 library.
+This library adds support for Jackson's `@JsonView` with Retrofit 2, which is not available in the original https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson[_converter-jackson_] Retrofit 2 library.
 
 === Usage
 

@@ -75,7 +75,23 @@ public class JacksonExtendedConverterFactory extends Converter.Factory {
                                                           Annotation[] methodAnnotations,
                                                           Retrofit retrofit) {
         JavaType javaType = mapper.getTypeFactory().constructType(type);
-        ObjectWriter writer = mapper.writerFor(javaType);
+        ObjectWriter writer;
+        JsonView jsonViewParamAnnot = findFirstAnnotation(parameterAnnotations, JsonView.class);
+        JsonView jsonViewMethodAnnot = findFirstAnnotation(methodAnnotations, JsonView.class);
+        if (jsonViewParamAnnot != null || jsonViewMethodAnnot != null) {
+            Class<?>[] views;
+            if (jsonViewParamAnnot != null) {
+                views = jsonViewParamAnnot.value();
+            } else {
+                views = jsonViewMethodAnnot.value();
+            }
+            if (views.length != 1) {
+                throw new IllegalArgumentException("@JsonView only supported for response with exactly 1 class argument");
+            }
+            writer = mapper.writerWithView(views[0]).forType(javaType);
+        } else {
+            writer = mapper.writerFor(javaType);
+        }
         return new JacksonExtendedRequestBodyConverter<>(writer);
     }
 

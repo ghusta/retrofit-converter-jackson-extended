@@ -16,11 +16,12 @@ For example, you can add a `@JsonView` annotation on a request method :
 public interface MyApi {
 
     @GET("users")
-    @JsonView(Views.Public.class)
+    @JsonView(Views.Public.class) <1>
     CompletableFuture<List<User>> getUsers();
 
 }
 ----
+<1> Annotation `@JsonView` with view class as attribute
 
 The different views can be managed in a unique class like this :
 

@@ -1,6 +1,7 @@
 = Retrofit 2 Converter for Jackson extended with additional features
 :toc:
 :author: Guillaume Husta
+:source-highlighter: coderay
 
 == Overview
 

@@ -38,7 +38,7 @@ check maven wrapper:
   script:
     - 'echo Test setup Maven Wrapper...'
     - 'chmod +x mvnw'
-    - 'mvnw -v'
+    - './mvnw -v'
 
 verify:
   stage: test

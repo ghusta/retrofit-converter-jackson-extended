@@ -37,7 +37,8 @@ check maven wrapper:
   image: eclipse-temurin:21
   script:
     - 'echo Test setup Maven Wrapper...'
-    - './mvnw -v'
+    - 'chmod +x mvnw'
+    - 'mvnw -v'
 
 verify:
   stage: test

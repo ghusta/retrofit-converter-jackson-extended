@@ -26,6 +26,18 @@ cache:
   paths:
     - .m2/repository
 
+stages:
+  - setup
+  - build
+  - test
+  - deploy
+
+check maven wrapper:
+  stage: setup
+  script:
+    - 'echo Test setup Maven Wrapper...'
+    - './mvnw -v'
+
 verify:
   stage: test
   script:

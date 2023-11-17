@@ -1,0 +1,62 @@
+= Retrofit 2 Converter for Jackson extended with additional features
+:toc:
+:author: Guillaume Husta
+
+== Overview
+
+This library adds support of Jackson's `@JsonView`, which is not available in the original https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson[_converter-jackson_] Retrofit 2 library.
+
+=== Usage
+
+For example you can add a `@JsonView` annotation on an request method :
+
+[source,java]
+----
+public interface MyApi {
+
+    @GET("users")
+    @JsonView(Views.Public.class)
+    CompletableFuture<List<User>> getUsers();
+
+}
+----
+
+The different views can be managed in a unique class like this :
+
+[source,java]
+----
+public class Views {
+    public interface All { }
+    public interface Public { }
+}
+----
+
+You will have to configure Retrofit to use this custom converter that way :
+
+[source,java]
+----
+ObjectMapper objectMapper = JsonMapper.builder()
+    ...
+    .build;
+
+Retrofit retrofit = new Retrofit.Builder()
+    .baseUrl("https://api.acme.com/")
+    ...
+    .addConverterFactory(JacksonExtendedConverterFactory.create(objectMapper));
+    .build();
+----
+
+== Inspiration
+
+Inspired by support of `@JsonView` in Spring MVC.
+
+See more : https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring[Latest Jackson integration improvements in Spring].
+
+== References
+
+* Retrofit
+** https://github.com/square/retrofit
+** https://square.github.io/retrofit/
+* Jackson
+** https://github.com/FasterXML/jackson
+** https://www.baeldung.com/jackson-json-view-annotation

@@ -10,7 +10,7 @@ This library adds support for Jackson's `@JsonView` with Retrofit 2, which is no
 
 For example you can add a `@JsonView` annotation on an request method :
 
-[source,java]
+[%linenums,java,highlight=4..4]
 ----
 public interface MyApi {
 

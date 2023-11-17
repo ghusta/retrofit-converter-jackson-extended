@@ -9,7 +9,7 @@ This library adds support for Jackson's `@JsonView` with Retrofit 2, which is no
 
 === Usage
 
-For example you can add a `@JsonView` annotation on an request method :
+For example, you can add a `@JsonView` annotation on a request method :
 
 [%linenums,java,highlight=4..4]
 ----

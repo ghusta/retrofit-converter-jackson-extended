@@ -35,9 +35,10 @@ stages:
 check maven wrapper:
   stage: setup
   image: eclipse-temurin:21
+  before_script:
+    - 'chmod +x mvnw'
   script:
     - 'echo Test setup Maven Wrapper...'
-    - 'chmod +x mvnw'
     - './mvnw -v'
 
 verify:

@@ -44,7 +44,7 @@ ObjectMapper objectMapper = JsonMapper.builder()
 Retrofit retrofit = new Retrofit.Builder()
     .baseUrl("https://api.acme.com/")
     ...
-    .addConverterFactory(JacksonExtendedConverterFactory.create(objectMapper));
+    .addConverterFactory(JacksonExtendedConverterFactory.create(objectMapper))
     .build();
 ----
 

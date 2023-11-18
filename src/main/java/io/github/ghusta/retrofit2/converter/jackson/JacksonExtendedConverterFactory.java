@@ -86,7 +86,7 @@ public class JacksonExtendedConverterFactory extends Converter.Factory {
                 views = jsonViewMethodAnnot.value();
             }
             if (views.length != 1) {
-                throw new IllegalArgumentException("@JsonView only supported for response with exactly 1 class argument");
+                throw new IllegalArgumentException("@JsonView only supported for request with exactly 1 class argument");
             }
             writer = mapper.writerWithView(views[0]).forType(javaType);
         } else {

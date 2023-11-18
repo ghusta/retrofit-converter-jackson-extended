@@ -8,7 +8,6 @@ import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -50,7 +49,6 @@ class RetrofitCustomConverterRequestTest {
     }
 
     @Test
-    @Disabled
     void callRequestWithData() throws IOException {
         User newUser = new User();
         newUser.setId(100L);

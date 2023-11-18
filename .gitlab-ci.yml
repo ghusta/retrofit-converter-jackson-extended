@@ -45,3 +45,9 @@ verify:
   stage: test
   script:
     - 'mvn $MAVEN_CLI_OPTS verify'
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml

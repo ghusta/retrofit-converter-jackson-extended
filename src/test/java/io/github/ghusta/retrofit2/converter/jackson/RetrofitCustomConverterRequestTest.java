@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import io.github.ghusta.retrofit2.converter.jackson.data.User;
 import okhttp3.Call;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,13 +22,7 @@ class RetrofitCustomConverterRequestTest {
 
     private MyApi myApi;
 
-    private static Request savedRequest;
-
-    private static okhttp3.Response testInterceptor(Interceptor.Chain chain) throws IOException {
-        Request request = chain.request();
-        savedRequest = request.newBuilder().build();
-        return chain.proceed(request);
-    }
+    private Request savedRequest;
 
     @BeforeEach
     void setUp() {
@@ -40,7 +33,11 @@ class RetrofitCustomConverterRequestTest {
                 .build();
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(RetrofitCustomConverterRequestTest::testInterceptor)
+                .addInterceptor(chain -> {
+                    Request request = chain.request();
+                    savedRequest = request.newBuilder().build();
+                    return chain.proceed(request);
+                })
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -61,7 +58,6 @@ class RetrofitCustomConverterRequestTest {
         newUser.setTwitterHandle("bob44");
         newUser.setPassword("azerty");
 
-        savedRequest = null;
         try {
             Response<Void> response = myApi.createUser(newUser)
                     .execute();

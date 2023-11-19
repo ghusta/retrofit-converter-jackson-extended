@@ -41,7 +41,7 @@ class RetrofitCustomConverterRequestTest {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(apiBaseUrl)
-                .callFactory(okHttpClient)
+                .callFactory((Call.Factory) okHttpClient) // cast for OkHttp 4.x compatibility (built with Kotlin)
                 .addConverterFactory(JacksonExtendedConverterFactory.create(objectMapper))
                 .build();
 

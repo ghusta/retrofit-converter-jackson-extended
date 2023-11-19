@@ -58,7 +58,7 @@ verify:
 dependency_check:
   stage: security
   script:
-    - 'mvn $MAVEN_CLI_OPTS org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7.0 '
+    - 'mvn -ntp org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7.0 '
   artifacts:
     name: "${CI_JOB_ID}_${CI_JOB_NAME}"
     when: always

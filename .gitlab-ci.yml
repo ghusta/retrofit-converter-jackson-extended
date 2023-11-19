@@ -31,6 +31,9 @@ stages:
   - build
   - test
   - deploy
+  - security
+  - quality
+  - publish
 
 check maven wrapper:
   stage: setup
@@ -51,3 +54,15 @@ verify:
       junit:
         - target/surefire-reports/TEST-*.xml
         - target/failsafe-reports/TEST-*.xml
+
+dependency_check:
+  stage: security
+  script:
+    - 'mvn $MAVEN_CLI_OPTS org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7.0 '
+  artifacts:
+    name: "${CI_JOB_ID}_${CI_JOB_NAME}"
+    when: always
+    expire_in: 1 week
+    paths:
+      - target/dependency-check-report.html
+  allow_failure: true

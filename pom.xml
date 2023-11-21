@@ -4,7 +4,7 @@
 
     <groupId>io.github.ghusta.retrofit2</groupId>
     <artifactId>retrofit-converter-jackson-extended</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>Retrofit 2 Converter for Jackson extended with additional features</name>
     <description>Retrofit 2 Converter for Jackson extended with additional features</description>
@@ -30,7 +30,7 @@
         <connection>scm:git:git://github.com/ghusta/retrofit-converter-jackson-extended.git</connection>
         <developerConnection>scm:git:ssh://github.com:ghusta/retrofit-converter-jackson-extended.git</developerConnection>
         <url>https://github.com/ghusta/retrofit-converter-jackson-extended/tree/main</url>
-      <tag>1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>

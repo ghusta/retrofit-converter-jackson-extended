@@ -8,6 +8,7 @@
 
     <name>Retrofit 2 Converter for Jackson extended with additional features</name>
     <description>Retrofit 2 Converter for Jackson extended with additional features</description>
+    <url>https://github.com/ghusta/retrofit-converter-jackson-extended</url>
     <inceptionYear>2023</inceptionYear>
     <licenses>
         <license>
@@ -24,6 +25,12 @@
             <organizationUrl>https://github.com/ghusta</organizationUrl>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/ghusta/retrofit-converter-jackson-extended.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ghusta/retrofit-converter-jackson-extended.git</developerConnection>
+        <url>https://github.com/ghusta/retrofit-converter-jackson-extended/tree/main</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

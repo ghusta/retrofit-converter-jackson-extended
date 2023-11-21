@@ -3,6 +3,10 @@
 :author: Guillaume Husta
 :source-highlighter: coderay
 
+image:https://github.com/ghusta/retrofit-converter-jackson-extended/actions/workflows/maven.yml/badge.svg[Build with Maven,link=https://github.com/ghusta/retrofit-converter-jackson-extended/actions/workflows/maven-build.yml]
+image:https://img.shields.io/github/v/release/ghusta/retrofit-converter-jackson-extended?sort=semver&logo=GitHub[GitHub release,link=https://github.com/ghusta/retrofit-converter-jackson-extended/releases]
+image:https://img.shields.io/maven-central/v/io.github.ghusta.retrofit2/retrofit-converter-jackson-extended.svg?label=Maven%20Central[Maven Central,link=https://search.maven.org/search?q=g:%22io.github.ghusta.retrofit2%22%20AND%20a:%22retrofit-converter-jackson-extended%22]
+
 == Overview
 
 This library adds support for Jackson's `@JsonView` with Retrofit 2, which is not available in the original https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson[_converter-jackson_] Retrofit 2 library.

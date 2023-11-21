@@ -6,6 +6,9 @@ import retrofit2.Converter;
 
 import java.io.IOException;
 
+/**
+ * Copied from <code>retrofit2.converter.jackson.JacksonResponseBodyConverter</code>.
+ */
 class JacksonExtendedResponseBodyConverter<T> implements Converter<ResponseBody, T> {
 
     private final ObjectReader adapter;

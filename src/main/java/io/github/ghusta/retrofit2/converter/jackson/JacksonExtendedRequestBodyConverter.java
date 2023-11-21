@@ -7,6 +7,9 @@ import retrofit2.Converter;
 
 import java.io.IOException;
 
+/**
+ * Copied from <code>retrofit2.converter.jackson.JacksonRequestBodyConverter</code>.
+ */
 class JacksonExtendedRequestBodyConverter<T> implements Converter<T, RequestBody> {
 
     private static final MediaType MEDIA_TYPE = MediaType.get("application/json; charset=UTF-8");

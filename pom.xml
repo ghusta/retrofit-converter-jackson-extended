@@ -249,20 +249,6 @@
                     </plugin>
 
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
                         <groupId>org.jreleaser</groupId>
                         <artifactId>jreleaser-maven-plugin</artifactId>
                         <configuration>
@@ -276,7 +262,7 @@
                                         <nexus2>
                                             <maven-central>
                                                 <active>ALWAYS</active>
-                                                <url>https://s01.oss.sonatype.org/service/local</url>;
+                                                <url>https://s01.oss.sonatype.org/service/local</url>
                                                 <closeRepository>false</closeRepository>
                                                 <releaseRepository>false</releaseRepository>
                                                 <stagingRepositories>target/staging-deploy</stagingRepositories>

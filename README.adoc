@@ -13,6 +13,17 @@ This library adds support for Jackson's `@JsonView` with Retrofit 2, which is no
 
 === Usage
 
+First, import the library :
+
+[source,xml]
+----
+    <dependency>
+        <groupId>io.github.ghusta.retrofit2</groupId>
+        <artifactId>retrofit-converter-jackson-extended</artifactId>
+        <version>1.1.0</version>
+    </dependency>
+----
+
 For example, you can add a `@JsonView` annotation on a request method :
 
 [%linenums,java,highlight=4..4]

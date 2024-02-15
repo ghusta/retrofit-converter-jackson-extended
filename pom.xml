@@ -40,7 +40,7 @@
         <module.name>io.github.ghusta.retrofit2.converter.jackson.extended</module.name>
 
         <retrofit.version>2.9.0</retrofit.version>
-        <jackson.version>2.15.3</jackson.version>
+        <jackson.version>2.15.4</jackson.version>
     </properties>
 
     <dependencies>
